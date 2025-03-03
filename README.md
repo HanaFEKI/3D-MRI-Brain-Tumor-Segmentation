@@ -24,9 +24,3 @@ Install the required packages:
 pip install numpy nibabel tensorflow sklearn matplotlib gradio
 ```
 
-```bash
-pip install numpy nibabel tensorflow sklearn matplotlib gradio
-```
-
-
-
