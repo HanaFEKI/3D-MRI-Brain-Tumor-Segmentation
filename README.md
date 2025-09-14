@@ -3,6 +3,8 @@
 **This repository** implements a 3D U-Net for brain tumor segmentation (BraTS-style).  
 It includes preprocessing for `.nii` volumes, a custom 3D U-Net built from scratch, training utilities, and a Gradio app for interactive inference on `.npy` volumes (FLAIR, T1ce, T2 channels).
 
+![Demo of 3D_MRI_Brain_Segmentation](MRI_segmentation_demo.mp4)
+
 ---
 
 ### 🗂️ What is a NIfTI file?  
