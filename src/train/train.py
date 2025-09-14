@@ -129,5 +129,5 @@ if __name__ == "__main__":
     unet = UNet3D()
     
     # Pass model.model to Trainer
-    trainer = Trainer(model=unet.model, dataset_path=dataset_path, loss_fn='dice')
+    trainer = Trainer(model=unet.model, dataset_path=dataset_path)
     trainer.train()
