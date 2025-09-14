@@ -8,10 +8,8 @@ It includes preprocessing for `.nii` volumes, a custom 3D U-Net built from scrat
 ## 🔎 Project at a glance
 
 - **Purpose:** Segment brain tumors from multi-modal MRI (BraTS).  
-- **Dataset (reference):** BraTS training/validation (Kaggle link provided in the repo).  
-  `https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation`  
-- **Trained model (example):** `brats_3d.hdf5` (Drive link provided in the repo).  
-  `https://drive.google.com/file/d/1p5_cGAudgRY3faVMemD79xswwSonBcoQ/view?usp=sharing`  
+- **Dataset (reference):** BraTS training/validation [[Kaggle link](https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation)].  
+- **Trained model (example):** `brats_3d.hdf5` [[Drive link]](https://drive.google.com/file/d/1p5_cGAudgRY3faVMemD79xswwSonBcoQ/view?usp=sharing).  
 - **Interactive input:** `.npy` volumes with **3 channels** (FLAIR, T1ce, T2) for the Gradio demo.  
 - **Core files:**
   - `segmentation_app_3d.ipynb` — notebook with development, preprocessing pipeline, and experiments.
