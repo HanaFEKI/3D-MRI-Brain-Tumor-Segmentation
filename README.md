@@ -1,26 +1,41 @@
-# 3D MRI Brain Tumor Segmentation with U-Net
+# 🧠 3D MRI Brain Tumor Segmentation with 3D U-Net
 
-This project implements a 3D U-Net model for brain tumor segmentation, designed for the BraTS dataset with .nii files for training reference, and adapted for interactive use with .npy files using a pre-trained model. It combines data preprocessing, a custom U-Net architecture built from scratch, and a Gradio interface for real-time segmentation.
+**This repository** implements a 3D U-Net for brain tumor segmentation (BraTS-style).  
+It includes preprocessing for `.nii` volumes, a custom 3D U-Net built from scratch, training utilities, and a Gradio app for interactive inference on `.npy` volumes (FLAIR, T1ce, T2 channels).
 
-## Overview
+---
 
-- **Purpose**: Segment brain tumors from MRI scans using a custom-trained 3D U-Net model.
-- **Dataset**: The BraTS dataset can be accessed at: https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation.
-- **Training Reference**: Processes .nii files with 4 modalities (FLAIR, T1, T1ce, T2) from the BraTS dataset (see notebook).
-- **Interactive Use**: Accepts .npy files with 3 channels (FLAIR, T1ce, T2) via a Gradio web interface.
-- **Trained Model**: The trained model `brats_3d.hdf5` is available in the following Drive link: https://drive.google.com/file/d/1p5_cGAudgRY3faVMemD79xswwSonBcoQ/view?usp=sharing.
-  
-## Files
+## 🔎 Project at a glance
 
-- `segmentation_app_3d.ipynb`: Jupyter notebook with development code and detailed Markdown explanations.
-- `segmentation_app_3d.py`: **Main executable Python script** for running the Gradio interface (recommended for stable execution).
-- `train.py`: Script for training the 3D U-Net model on the BraTS dataset.
+- **Purpose:** Segment brain tumors from multi-modal MRI (BraTS).  
+- **Dataset (reference):** BraTS training/validation (Kaggle link provided in the repo).  
+  `https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation`  
+- **Trained model (example):** `brats_3d.hdf5` (Drive link provided in the repo).  
+  `https://drive.google.com/file/d/1p5_cGAudgRY3faVMemD79xswwSonBcoQ/view?usp=sharing`  
+- **Interactive input:** `.npy` volumes with **3 channels** (FLAIR, T1ce, T2) for the Gradio demo.  
+- **Core files:**
+  - `segmentation_app_3d.ipynb` — notebook with development, preprocessing pipeline, and experiments.
+  - `segmentation_app_3d.py` — recommended stable entrypoint (Gradio server + inference helpers).
+  - `train.py` — training script for 3D U-Net on `.nii` (BraTS) data.
 
-## Installation
+---
 
-Install the required packages:
+## ✅ Features
+
+- End-to-end preprocessing (NIfTI → normalized 3D arrays).
+- Fully custom 3D U-Net implementation (encoder / bottleneck / decoder with skip connections).
+- Losses & metrics suitable for medical segmentation (Dice loss, BCE, Dice coefficient).
+- Training utilities: augmentation, patch extraction, checkpointing.
+- Gradio interface for quick model inspection and demo.
+
+---
+
+## ⚙️ Requirements & Install
+
+Recommended: a Linux/Mac machine with an NVIDIA GPU and >= 16GB RAM (or use reduced patch sizes).
+
+Install dependencies:
 
 ```bash
-pip install numpy nibabel tensorflow sklearn matplotlib gradio
-```
-
+pip install numpy nibabel tensorflow scikit-learn matplotlib gradio
+# optional: albumentations, torch (if you adapt to PyTorch), tqdm
