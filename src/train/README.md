@@ -15,21 +15,21 @@ It includes **data preprocessing, model training, and optional use of Dice Loss*
 ## Loss Functions
 
 ### 1. Categorical Crossentropy (default)
-\[
+```math
 \text{Loss} = - \sum_{c=1}^{C} y_c \log(\hat{y}_c)
-\]
+```
 
-- \(y_c\) = true one-hot label for class \(c\)  
-- \(\hat{y}_c\) = predicted softmax probability for class \(c\)  
+- ```y_c``` = true one-hot label for class ```c```  
+- ```\hat{y}_c``` = predicted softmax probability for class ```c```
 - Applied **voxel-wise** across the 3D volume
 
 ### 2. Dice Loss (alternative)
-\[
+```math
 \text{Dice} = \frac{2 |X \cap Y|}{|X| + |Y|}
-\]
-\[
+```
+```math
 \text{Loss} = 1 - \text{Dice}
-\]
+```
 
 - Measures **overlap between predicted and ground truth masks**  
 - Very effective for **imbalanced segmentation** (small tumors vs large background)
